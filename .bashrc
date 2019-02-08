@@ -116,27 +116,47 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Get git branch
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+
+#__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/philippe/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    \eval "$__conda_setup"
+#else
+#    if [ -f "/home/philippe/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/philippe/anaconda3/etc/profile.d/conda.sh"
+#        CONDA_CHANGEPS1=false conda activate base
+#    else
+#        \export PATH="/home/philippe/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+
+# <<< conda init <<<
+
+# Get git branch on the prompt
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\e[32m\e[1m\u@\h\e[0m \w\e[1m\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \n$ "
 
 # my custom aliases
-alias FLEXBE='roslaunch flexbe_onboard behavior_onboard.launch'
-alias FLEXBEWIDGET='roslaunch flexbe_widget behavior_ocs.launch'
-alias BASHRC='gedit ~/.bashrc 2> /dev/null'
-alias SOURCEBASHRC='source ~/.bashrc'
-alias CATKIN_MAKE='cd ~/sara_ws; catkin_make; cd -'
+alias BASHRC='gedit ~/MaConfig/.bashrc 2> /dev/null'
 alias CONNECTTOSARA='ssh -Y walking@sara-lenovo'
 alias xclip="xclip -selection c"
 alias SETMASTERTOSARA='export ROS_IP=192.168.1.231; export ROS_MASTER_URI=http://192.168.1.229:11311'
 alias SETMASTERTOME='export ROS_MASTER_URI=http://localhost'
+alias CLEARTHUMBNAILS="rm -rf ~/.cache/thumbnails/"
 
+source ~/sara_ws/src/sara_launch/sh_files/sararc.sh
 
-source /opt/ros/kinetic/setup.bash
-source ~/sara_ws/devel/setup.bash
+# If log on sara
+#export ROS_IP=192.168.0.236
+#export ROS_MASTER_URI=http://192.168.0.250:11311
 
-#export ROS_IP=192.168.1.231
-#export ROS_MASTER_URI=http://192.168.1.229:11311
+# If local
+export ROS_IP=127.0.0.1
+export ROS_MASTER_URI=http://localhost:11311/
+
 
