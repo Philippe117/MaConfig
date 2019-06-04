@@ -143,17 +143,25 @@ export PS1="\e[32m\e[1m\u@\h\e[0m \w\e[1m\[\033[33m\]\$(parse_git_branch)\[\033[
 
 # my custom aliases
 alias BASHRC='gedit ~/MaConfig/.bashrc 2> /dev/null'
-alias CONNECTTOSARA='ssh -Y walking@sara-lenovo'
+alias CONNECTTOSARA='ssh -Y walking@192.168.1.239'
 alias xclip="xclip -selection c"
-alias SETMASTERTOSARA='export ROS_IP=192.168.1.231; export ROS_MASTER_URI=http://192.168.1.229:11311'
+alias SETMASTERTOSARA='export ROS_IP=192.168.1.225; export ROS_MASTER_URI=http://192.168.1.239:11311'
 alias SETMASTERTOME='export ROS_MASTER_URI=http://localhost'
 alias CLEARTHUMBNAILS="rm -rf ~/.cache/thumbnails/"
+alias SWAPRESET="sudo swapoff -a ; sudo swapon -a"
+alias PULSEAUDIO="pacmd unload-module module-udev-detect && pacmd load-module module-udev-detect"
+alias PFE="source ~/ÉTS/Session\ 11/PFE/workspace/devel/setup.bash"
+alias WM="source ~/sara_ws/src/sara_launch/sh_files/sararc.sh"
+alias htop="htop -d 10"
+alias CONNECTTOPFE="echo password is \"rosbots!\" ; ssh -X pi@10.42.0.179"
+
+PATH+=:$HOME/.cargo/bin
 
 source ~/sara_ws/src/sara_launch/sh_files/sararc.sh
 
 # If log on sara
-#export ROS_IP=192.168.0.236
-#export ROS_MASTER_URI=http://192.168.0.250:11311
+#export ROS_IP=192.168.1.231
+#export ROS_MASTER_URI=http://192.168.1.246:11311
 
 # If local
 export ROS_IP=127.0.0.1
