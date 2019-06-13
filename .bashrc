@@ -150,14 +150,14 @@ alias SETMASTERTOME='export ROS_MASTER_URI=http://localhost'
 alias CLEARTHUMBNAILS="rm -rf ~/.cache/thumbnails/"
 alias SWAPRESET="sudo swapoff -a ; sudo swapon -a"
 alias PULSEAUDIO="pacmd unload-module module-udev-detect && pacmd load-module module-udev-detect"
-alias PFE="source ~/ÉTS/Session\ 11/PFE/workspace/devel/setup.bash"
+alias PFE="source ~/BiruBot/pfe_ws/devel/setup.bash"
 alias WM="source ~/sara_ws/src/sara_launch/sh_files/sararc.sh"
 alias htop="htop -d 10"
 alias CONNECTTOPFE="echo password is \"rosbots!\" ; ssh -X pi@10.42.0.179"
 
 PATH+=:$HOME/.cargo/bin
 
-source ~/sara_ws/src/sara_launch/sh_files/sararc.sh
+#source ~/sara_ws/src/sara_launch/sh_files/sararc.sh
 
 # If log on sara
 #export ROS_IP=192.168.1.231
