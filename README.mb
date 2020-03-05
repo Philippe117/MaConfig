@@ -1,0 +1,7 @@
+# Ma MaConfig
+
+# Installation
+```
+cd **/MaConfig
+echo "source $(pwd)/.bashrc" > ~/.bashrc
+```
