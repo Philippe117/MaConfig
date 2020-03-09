@@ -15,7 +15,7 @@ alias PULSEAUDIO="pacmd unload-module module-udev-detect && pacmd load-module mo
 PATH+=:$HOME/.cargo/bin
 PATH+=":~/MaConfig"
 
-source /home/philippe/sara_install/script/setup.sh
+source ~/sara_install/script/setup.sh
 
 
 ## To connect to aws
