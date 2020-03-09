@@ -16,3 +16,14 @@ PATH+=:$HOME/.cargo/bin
 PATH+=":~/MaConfig"
 
 source /home/philippe/sara_install/script/setup.sh
+
+
+## To connect to aws
+alias AWS_CONNECT='ssh -i "~/aws_key.pem" ubuntu@ec2-3-17-130-9.us-east-2.compute.amazonaws.com'
+
+## On sara
+alias REVERSE_SSH='ssh -i aws_key.pem -R 43022:localhost:22 ubuntu@ec2-3-17-130-9.us-east-2.compute.amazonaws.com'
+
+## On aws
+alias CONNECT_TO_SARA='ssh walking@localhost -p 43022'
+
