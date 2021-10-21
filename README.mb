@@ -3,5 +3,5 @@
 # Installation
 ```
 cd **/MaConfig
-echo "source $(pwd)/.bashrc" > ~/.bashrc
+echo "source $(pwd)/.bashrc" >> ~/.bashrc
 ```
